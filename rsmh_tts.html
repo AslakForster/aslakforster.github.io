@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RSMH Kalix – Ljusglimten | Vi finns här för dig!</title>
+<!-- Uppläsning med webbläsarens eller operativsystemets inbyggda talsyntes (Web Speech API).
+     Ingen inspelad ljudfil och ingen JSON – texten på sidan är den enda källan. -->
+<meta name="description" content="RSMH Kalix, Ljusglimten – en förening som anordnar träffar och aktiviteter där gemenskap står i fokus. Riksförbundet för Social &amp; Mental Hälsa.">
+<meta name="date" content="2026-08-10">
+<meta name="theme-color" content="#6fa83c">
+<link rel="icon" href="https://www.rsmh.se/favicon.ico" type="image/png">
+
+<style type="text/css">
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+#hem, #om, #aktiviteter, #medlem, #kontakt { scroll-margin-top: 104px; }
+
+.kort, .ruta, .fb-kort { border-radius: 14px; }
+.streck                { border-radius: 3px; }
+.topp-knapp            { border-radius: 50%; }
+.knapp                 { border-radius: 999px; }
+
+.kort    { box-shadow: 0 10px 30px rgba(23,20,19,.10); }
+.fb-kort { box-shadow: 0 18px 48px rgba(24,119,242,.18); }
+
+.fb-grupp { border-radius: 10px; }
+
+.sidhuvud     { position: -webkit-sticky; position: sticky; top: 0; }
+.meny a       { border-radius: 8px; transition: background-color .15s ease, color .15s ease; }
+.meny a:hover { background-color: #4d7a26; color: #ffffff; }
+
+.knapp       { transition: transform .15s ease, box-shadow .15s ease; }
+.knapp:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.22); }
+
+.kort-lyft       { transition: transform .2s ease; }
+.kort-lyft:hover { transform: translateY(-4px); }
+
+.hero {
+  background-image:
+    radial-gradient(900px 420px at 10% 120%, rgba(111,168,60,.30), transparent 60%),
+    radial-gradient(760px 400px at 92% -20%, rgba(111,168,60,.20), transparent 55%),
+    linear-gradient(175deg, #fdfefb 0%, #f3f7ea 55%, #e9f1da 100%) !important;
+}
+.akt-bak     { background-image: linear-gradient(180deg, #eef3e2, #ffffff 85%) !important; }
+.kontakt-bak { background-image: linear-gradient(180deg, #4d7a26, #3c6119) !important; }
+
+.rubrik1 { font-size: clamp(34px, 5vw, 54px) !important; }
+.rubrik2 { font-size: clamp(28px, 3.6vw, 42px) !important; }
+
+a:focus-visible { outline: 3px solid #4d7a26; outline-offset: 2px; }
+
+@media screen and (max-width: 1000px) {
+  .spalt4 { width: 50% !important; min-width: 0 !important; }
+  .spalt6 { width: 25% !important; min-width: 0 !important; }
+}
+@media screen and (max-width: 900px) {
+  .sidhuvud           { position: static; }
+  .logo-blk           { float: none !important; text-align: center; margin: 6px 0 0 !important; }
+  .logo-txt           { font-size: 28px !important; }
+  .logo-und           { font-size: 13px !important; }
+  .meny               { float: none !important; text-align: center !important; line-height: 1.9 !important; padding: 4px 0 6px !important; }
+  .meny a             { display: inline-block; line-height: 1.4 !important; padding: 11px 12px !important; }
+  .hero-txt, .hero-fb { width: 100% !important; min-width: 0 !important; float: none !important; }
+  .fb-kort            { max-width: 500px; margin: 0 auto 30px !important; }
+  .fb-ram, .fb-flode  { height: 620px !important; }
+  .spalt3, .fot-spalt { width: 50% !important; min-width: 0 !important; }
+  #hem, #om, #aktiviteter, #medlem, #kontakt { scroll-margin-top: 0; }
+}
+@media screen and (max-width: 640px) {
+  .spalt4, .spalt3, .fot-spalt { width: 100% !important; min-width: 0 !important; float: none !important; }
+  .spalt6     { width: 50% !important; min-width: 0 !important; }
+  .knapprad   { line-height: 1.5 !important; }
+  .knapprad a { display: block; text-align: center; margin: 0 0 12px 0 !important; }
+  .hero       { padding: 34px 0 42px !important; }
+  .logo-txt   { font-size: 25px !important; }
+  .logo-und   { font-size: 12px !important; letter-spacing: .06em !important; }
+  .fb-ram, .fb-flode { height: 520px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .knapp, .kort-lyft { transition: none; }
+  .knapp:hover, .kort-lyft:hover { transform: none; }
+}
+</style>
+
+</head>
+
+<body style="margin:0;font-family:'Segoe UI',Frutiger,Roboto,Helvetica,Arial,sans-serif;font-size:17px;color:#171413;background-color:#ffffff;line-height:1.65">
+
+<!-- SIDHUVUD -->
+<div class="sidhuvud" style="z-index:50;background-color:#ffffff;border-bottom:4px solid #6fa83c">
+  <div style="max-width:1036px;margin:0 auto;padding:8px 22px">
+
+    <div class="logo-blk" style="float:left;margin:4px 0">
+      <div class="logo-txt" style="font-family:'Arial Black',Arial,sans-serif;font-size:34px;line-height:1;letter-spacing:.06em;color:#171413;white-space:nowrap">RSMH KALIX</div>
+      <div class="logo-und" style="font-size:15px;line-height:1.35;letter-spacing:.08em;text-transform:uppercase;color:#332e2c;border-top:3px solid #d63a3a;padding-top:4px;margin-top:3px">Riksförbundet för Social &amp; Mental Hälsa</div>
+    </div>
+
+    <div class="meny" style="float:right;text-align:right;line-height:2.6;padding-top:6px">
+      <a href="#hem" style="color:#171413;text-decoration:none;font-weight:bold;font-size:16px;padding:8px 10px;white-space:nowrap">Hem</a>
+      <a href="#om" style="color:#171413;text-decoration:none;font-weight:bold;font-size:16px;padding:8px 10px;white-space:nowrap">Om oss</a>
+      <a href="#aktiviteter" style="color:#171413;text-decoration:none;font-weight:bold;font-size:16px;padding:8px 10px;white-space:nowrap">Aktiviteter</a>
+      <a href="#medlem" style="color:#171413;text-decoration:none;font-weight:bold;font-size:16px;padding:8px 10px;white-space:nowrap">Bli medlem</a>
+      <a href="#kontakt" style="color:#171413;text-decoration:none;font-weight:bold;font-size:16px;padding:8px 10px;white-space:nowrap">Kontakt</a>
+    </div>
+
+    <div style="clear:both"><!-- Radbrytare --></div>
+  </div>
+</div>
+
+<!-- STARTDEL -->
+<div id="hem" class="hero" style="position:relative;overflow:hidden;padding:50px 0 76px;background-color:#f3f7ea">
+
+  <div style="max-width:1036px;margin:0 auto;padding:0 22px;position:relative">
+
+    <div class="hero-txt" style="float:left;width:48%;min-width:300px">
+      <div style="margin-bottom:30px">
+
+        <h1 class="rubrik1" style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:40px;margin:0 0 10px">RSMH Kalix – Ljusglimten</h1>
+
+        <div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;line-height:1.12;color:#4d7a26;font-size:23px;margin-bottom:18px">Vi finns här för dig!</div>
+
+        <p style="margin:0 0 26px;font-size:20px;color:#332e2c">
+          <b>Mår du dåligt och känner dig ensam?</b> Hos oss på RSMH kan du möta likasinnade,
+          fika eller delta i en aktivitet.</p>
+
+        <div class="knapprad" style="line-height:4.2">
+          <a class="knapp" href="#medlem" style="background-color:#4d7a26;color:#ffffff;padding:14px 30px;-moz-border-radius:24px;font-weight:bold;text-decoration:none;font-size:17px;letter-spacing:.03em;white-space:nowrap">Bli medlem</a>
+          <a class="knapp" href="#kontakt" style="color:#171413;border:2px solid #171413;padding:12px 28px;-moz-border-radius:24px;font-weight:bold;text-decoration:none;font-size:17px;letter-spacing:.03em;white-space:nowrap;margin-left:12px">Kontakta oss</a>
+        </div>
+
+        <div class="fb-grupp" style="margin:14px 0 0;padding:16px 20px;background-color:#f0f4fb;border-left:5px solid #1877f2;-moz-border-radius:10px">
+          <p style="margin:0 0 14px;font-size:17px;line-height:1.5;color:#332e2c">För de senaste uppdateringarna, besök vår Facebook-grupp.</p>
+          <a class="knapp" href="https://www.facebook.com/groups/405798999499880/?locale=sv_SE" target="_blank" rel="noopener" style="display:inline-block;background-color:#1877f2;color:#ffffff;padding:12px 26px;-moz-border-radius:22px;font-weight:bold;text-decoration:none;font-size:16px;letter-spacing:.03em;white-space:nowrap">Öppna Facebook-gruppen</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero-fb" style="float:left;width:52%;min-width:300px">
+      <div class="fb-kort" style="margin:0 0 30px 30px;background-color:#ffffff;-moz-border-radius:14px;overflow:hidden;border-top:6px solid #1877f2">
+
+        <div class="fb-ram" style="height:780px;overflow:hidden;background-color:#ffffff">
+          <iframe class="fb-flode" title="Facebook-flöde RSMH Kalix" width="100%" height="780" scrolling="yes" style="border:0;display:block" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRsmhLjusglimtenKalix&amp;tabs=timeline&amp;width=500&amp;height=3000&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false&amp;appId"></iframe>
+        </div>
+
+        <div style="padding:14px 20px 20px;background-color:#f0f4fb;border-top:1px solid #e2e8f2;text-align:center">
+          <div style="line-height:3.4">
+            <a class="knapp" href="https://www.facebook.com/RsmhLjusglimtenKalix/" target="_blank" style="background-color:#1877f2;color:#ffffff;padding:12px 26px;-moz-border-radius:22px;font-weight:bold;text-decoration:none;font-size:16px;letter-spacing:.03em;white-space:nowrap">Öppna Facebooksidan</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="clear:both"><!-- Radbrytare --></div>
+  </div>
+</div>
+
+<!-- OM OSS -->
+<div id="om" style="clear:both;padding:60px 0">
+  <div style="max-width:1036px;margin:0 auto;padding:0 22px">
+
+    <div style="color:#4d7a26;font-weight:bold;text-transform:uppercase;letter-spacing:.16em;font-size:14px;line-height:1.4;margin-bottom:10px">Om RSMH</div>
+    <h2 class="rubrik2" style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:32px;margin:0;color:#171413">Hos oss är du inte ensam</h2>
+    <div class="streck" style="width:64px;height:6px;background-color:#6fa83c;-moz-border-radius:3px;margin:12px 0 18px"><!-- dekorstreck --></div>
+
+    <p style="font-size:19px;max-width:760px;margin:0">
+      Sedan <b>1967</b> har vi kämpat för att alla ska ha samma rättigheter, oavsett mående.
+      Vårt mål är att alla med psykisk ohälsa ska kunna leva fullvärdiga liv och att ingen ska
+      behöva uppleva ofrivillig ensamhet.</p>
+
+    <div style="margin:36px -22px 0 0">
+
+      <div class="spalt4" style="float:left;width:25%;min-width:240px">
+        <div class="kort" style="margin:0 22px 22px 0;background-color:#f5f8ec;-moz-border-radius:14px;padding:24px;border-top:5px solid #6fa83c">
+          <h3 style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:17px;color:#4d7a26;margin:0 0 10px">Vi vet hur det känns</h3>
+          <p style="font-size:16px;margin:0">Vi vet hur det känns att må dåligt. Därför vet vi också att det är möjligt att återhämta sig.
+            Vi är tusentals med egna erfarenheter av psykisk ohälsa eller ensamhet.
+            Till oss får du komma precis som du är.</p>
+        </div>
+      </div>
+
+      <div class="spalt4" style="float:left;width:25%;min-width:240px">
+        <div class="kort" style="margin:0 22px 22px 0;background-color:#f5f8ec;-moz-border-radius:14px;padding:24px;border-top:5px solid #6fa83c">
+          <h3 style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:17px;color:#4d7a26;margin:0 0 10px">RSMH bryter ensamheten</h3>
+          <p style="font-size:16px;margin:0">Över hela landet bryter RSMH ensamhet och stöttar när livet är som tuffast.
+            &raquo;Det är min familj&laquo;, säger många av våra medlemmar. Vi är kamratstödjare,
+            vänner, medmänniskor.</p>
+        </div>
+      </div>
+
+      <div class="spalt4" style="float:left;width:25%;min-width:240px">
+        <div class="kort" style="margin:0 22px 22px 0;background-color:#f5f8ec;-moz-border-radius:14px;padding:24px;border-top:5px solid #6fa83c">
+          <h3 style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:17px;color:#4d7a26;margin:0 0 10px">Hjälp med vårdkontakter?</h3>
+          <p style="font-size:16px;margin:0">Vi vet att det kan vara både tidskrävande och komplicerat att ha kontakt med vården.
+            Hos oss kan du få stöd kring kontakter med socialtjänst, psykiatri eller andra inom vården.</p>
+        </div>
+      </div>
+
+      <div class="spalt4" style="float:left;width:25%;min-width:240px">
+        <div class="kort" style="margin:0 22px 22px 0;background-color:#f5f8ec;-moz-border-radius:14px;padding:24px;border-top:5px solid #6fa83c">
+          <h3 style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:17px;color:#4d7a26;margin:0 0 10px">Ta med en anhörig!</h3>
+          <p style="font-size:16px;margin:0">Du kanske har en släkting, granne eller bekant som upplever ensamhet? Tipsa om oss,
+            din insats kan betyda mycket! Ni är välkomna att besöka RSMH tillsammans.</p>
+        </div>
+      </div>
+
+      <div style="clear:both"><!-- Radbrytare --></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- AKTIVITETER -->
+<div id="aktiviteter" class="akt-bak" style="clear:both;padding:60px 0;background-color:#eef3e2">
+  <div style="max-width:1036px;margin:0 auto;padding:0 22px">
+
+    <div style="color:#4d7a26;font-weight:bold;text-transform:uppercase;letter-spacing:.16em;font-size:14px;line-height:1.4;margin-bottom:10px">RSMH Kalix – Ljusglimten</div>
+    <h2 class="rubrik2" style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:32px;margin:0;color:#171413">Gemenskap &amp; kamratstöd</h2>
+    <div class="streck" style="width:64px;height:6px;background-color:#6fa83c;-moz-border-radius:3px;margin:12px 0 18px"><!-- dekorstreck --></div>
+
+    <p style="font-size:19px;max-width:760px;margin:0">
+      Vi anordnar olika träffar och aktiviteter där gemenskap står i fokus.
+      Hos oss kan hela familjen trivas och hitta sysselsättning som roar. Ingen är för gammal
+      eller för ung för att passa in i vår gemenskap.</p>
+
+    <p style="font-size:19px;max-width:760px;margin:14px 0 0">
+      Den 22 maj 2026 bjöd RSMH på fika mot ensamhet i hela landet, inklusive Kalix.</p>
+
+    <div style="margin:34px -16px 0 0">
+
+      <div class="spalt6" style="float:left;width:20%;min-width:150px">
+        <div class="ruta" style="margin:0 16px 16px 0;background-color:#ffffff;border:2px solid #eef3e2;-moz-border-radius:14px;text-align:center;padding:22px 10px 18px">
+          <div style="font-size:37px;line-height:1.1;margin-bottom:8px">🎨</div>
+          <div style="font-weight:bold;font-size:16px;line-height:1.3">Måleri &amp; Pyssel</div>
+        </div>
+      </div>
+
+      <div class="spalt6" style="float:left;width:20%;min-width:150px">
+        <div class="ruta" style="margin:0 16px 16px 0;background-color:#ffffff;border:2px solid #eef3e2;-moz-border-radius:14px;text-align:center;padding:22px 10px 18px">
+          <div style="font-size:37px;line-height:1.1;margin-bottom:8px">🎤</div>
+          <div style="font-weight:bold;font-size:16px;line-height:1.3">Karaoke</div>
+        </div>
+      </div>
+
+      <div class="spalt6" style="float:left;width:20%;min-width:150px">
+        <div class="ruta" style="margin:0 16px 16px 0;background-color:#ffffff;border:2px solid #eef3e2;-moz-border-radius:14px;text-align:center;padding:22px 10px 18px">
+          <div style="font-size:37px;line-height:1.1;margin-bottom:8px">🔢</div>
+          <div style="font-weight:bold;font-size:16px;line-height:1.3">Bingo</div>
+        </div>
+      </div>
+
+      <div class="spalt6" style="float:left;width:20%;min-width:150px">
+        <div class="ruta" style="margin:0 16px 16px 0;background-color:#ffffff;border:2px solid #eef3e2;-moz-border-radius:14px;text-align:center;padding:22px 10px 18px">
+          <div style="font-size:37px;line-height:1.1;margin-bottom:8px">🍖</div>
+          <div style="font-weight:bold;font-size:16px;line-height:1.3">Grillkvällar</div>
+        </div>
+      </div>
+
+      <div class="spalt6" style="float:left;width:20%;min-width:150px">
+        <div class="ruta" style="margin:0 16px 16px 0;background-color:#ffffff;border:2px solid #eef3e2;-moz-border-radius:14px;text-align:center;padding:22px 10px 18px">
+          <div style="font-size:37px;line-height:1.1;margin-bottom:8px">🎱</div>
+          <div style="font-weight:bold;font-size:16px;line-height:1.3">Biljard</div>
+        </div>
+      </div>
+
+      <div style="clear:both"><!-- Radbrytare --></div>
+    </div>
+
+    <div class="kort" style="clear:both;margin-top:44px;text-align:center;font-size:20px;font-weight:bold;background-color:#4d7a26;color:#ffffff;-moz-border-radius:14px;padding:24px 26px">
+      Hur du än mår och vem du än är,
+      <div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:26px;margin-top:8px;color:#ffffff">Vi välkomnar dig till oss!</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLI MEDLEM -->
+<div id="medlem" style="clear:both;padding:60px 0">
+  <div style="max-width:1036px;margin:0 auto;padding:0 22px">
+
+    <div style="color:#4d7a26;font-weight:bold;text-transform:uppercase;letter-spacing:.16em;font-size:14px;line-height:1.4;margin-bottom:10px">Medlemskap</div>
+    <h2 class="rubrik2" style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:32px;margin:0;color:#171413">Vi hoppas att du vill bli medlem hos oss</h2>
+    <div class="streck" style="width:64px;height:6px;background-color:#6fa83c;-moz-border-radius:3px;margin:12px 0 18px"><!-- dekorstreck --></div>
+
+    <p style="font-size:19px;max-width:760px;margin:0">
+      Vill du hjälpa oss att hjälpa men känner att din tid och ork inte räcker till?
+      Då kan du bli <b>stödmedlem</b>. Ju fler stödmedlemmar RSMH har, desto mer kan vi göra
+      för de som behöver vårt stöd.</p>
+
+    <div style="margin:34px -22px 0 0">
+
+      <div class="spalt3" style="float:left;width:33.33%;min-width:230px">
+        <div class="kort kort-lyft" style="margin:0 22px 22px 0;background-color:#f5f8ec;-moz-border-radius:14px;text-align:center;padding:30px 20px;border-bottom:6px solid #6fa83c">
+          <div style="font-family:'Arial Black',Arial,sans-serif;font-size:41px;line-height:1.12;color:#4d7a26">160 <span style="font-size:17px;color:#171413">kr/år</span></div>
+          <p style="font-size:16px;margin:6px 0 0">Enskild medlem (30 år och uppåt)</p>
+        </div>
+      </div>
+
+      <div class="spalt3" style="float:left;width:33.33%;min-width:230px">
+        <div class="kort kort-lyft" style="margin:0 22px 22px 0;background-color:#f5f8ec;-moz-border-radius:14px;text-align:center;padding:30px 20px;border-bottom:6px solid #6fa83c">
+          <div style="font-family:'Arial Black',Arial,sans-serif;font-size:41px;line-height:1.12;color:#4d7a26">100 <span style="font-size:17px;color:#171413">kr/år</span></div>
+          <p style="font-size:16px;margin:6px 0 0">Ungdom / ung vuxen (13 till 29 år)</p>
+        </div>
+      </div>
+
+      <div class="spalt3" style="float:left;width:33.33%;min-width:230px">
+        <div class="kort kort-lyft" style="margin:0 22px 22px 0;background-color:#f5f8ec;-moz-border-radius:14px;text-align:center;padding:30px 20px;border-bottom:6px solid #6fa83c">
+          <div style="font-family:'Arial Black',Arial,sans-serif;font-size:41px;line-height:1.12;color:#4d7a26">220 <span style="font-size:17px;color:#171413">kr/år</span></div>
+          <p style="font-size:16px;margin:6px 0 0">Familj</p>
+        </div>
+      </div>
+
+      <div style="clear:both"><!-- Radbrytare --></div>
+    </div>
+
+    <div class="ruta" style="clear:both;margin-top:30px;background-color:#eef3e2;-moz-border-radius:14px;padding:26px">
+      <p style="font-size:20px;margin:0">Du kan enkelt lösa ditt medlemskap genom att
+        swisha till <b style="color:#4d7a26">123&nbsp;580&nbsp;59&nbsp;32</b> eller betala till
+        bankgiro <b style="color:#4d7a26">403-4013</b>.</p>
+      <p style="font-size:20px;font-weight:bold;margin:0">Kom ihåg att uppge ditt namn och adress.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- KONTAKT -->
+<div id="kontakt" class="kontakt-bak" style="clear:both;padding:60px 0;background-color:#4d7a26">
+  <div style="max-width:1036px;margin:0 auto;padding:0 22px">
+
+    <div style="color:#eef3e2;font-weight:bold;text-transform:uppercase;letter-spacing:.16em;font-size:14px;line-height:1.4;margin-bottom:10px">Kontakt</div>
+    <h2 class="rubrik2" style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:32px;margin:0;color:#ffffff">Hör av dig till oss</h2>
+    <div class="streck" style="width:64px;height:6px;background-color:#a9cd6e;-moz-border-radius:3px;margin:12px 0 18px"><!-- dekorstreck --></div>
+
+    <p style="font-size:19px;max-width:760px;margin:0;color:#ffffff">
+      Har du frågor, tankar eller idéer kring vår verksamhet eller behov att få prata
+      med någon – hör av dig via telefon eller mail.</p>
+
+    <div style="margin:34px -22px 0 0">
+
+      <div class="spalt4" style="float:left;width:25%;min-width:240px">
+        <div class="kort" style="margin:0 22px 22px 0;background-color:#ffffff;-moz-border-radius:14px;padding:24px;text-align:center">
+          <div style="font-size:32px;line-height:1.1;margin-bottom:8px">📞</div>
+          <div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;line-height:1.2;font-size:15px;color:#6b6560;margin-bottom:6px">Telefon</div>
+          <p style="font-weight:bold;margin:0"><a href="tel:0760228980" style="color:#4d7a26">076-022 89 80</a></p>
+          <div style="font-size:14px;line-height:1.5;color:#6b6560;margin-top:6px">Svarar vi inte – lämna ett röstmeddelande eller skicka ett SMS så hör vi av oss.</div>
+        </div>
+      </div>
+
+      <div class="spalt4" style="float:left;width:25%;min-width:240px">
+        <div class="kort" style="margin:0 22px 22px 0;background-color:#ffffff;-moz-border-radius:14px;padding:24px;text-align:center">
+          <div style="font-size:32px;line-height:1.1;margin-bottom:8px">✉️</div>
+          <div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;line-height:1.2;font-size:15px;color:#6b6560;margin-bottom:6px">Mail</div>
+          <p style="font-weight:bold;margin:0"><a href="mailto:rsmh.kalix@hotmail.com" style="color:#4d7a26">rsmh.kalix@hotmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="spalt4" style="float:left;width:25%;min-width:240px">
+        <div class="kort" style="margin:0 22px 22px 0;background-color:#ffffff;-moz-border-radius:14px;padding:24px;text-align:center">
+          <div style="font-size:32px;line-height:1.1;margin-bottom:8px">📱</div>
+          <div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;line-height:1.2;font-size:15px;color:#6b6560;margin-bottom:6px">Facebook</div>
+          <p style="font-weight:bold;margin:0"><a href="https://www.facebook.com/RsmhLjusglimtenKalix/" target="_blank" style="color:#4d7a26">RSMH Kalix Ljusglimten</a></p>
+        </div>
+      </div>
+
+      <div class="spalt4" style="float:left;width:25%;min-width:240px">
+        <div class="kort" style="margin:0 22px 22px 0;background-color:#ffffff;-moz-border-radius:14px;padding:24px;text-align:center">
+          <div style="font-size:32px;line-height:1.1;margin-bottom:8px">📍</div>
+          <div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;line-height:1.2;font-size:15px;color:#6b6560;margin-bottom:6px">Besöksadress</div>
+          <p style="font-weight:bold;margin:0">Folkets Hus, Kalix</p>
+        </div>
+      </div>
+
+      <div style="clear:both"><!-- Radbrytare --></div>
+    </div>
+
+    <div class="kort" style="clear:both;margin-top:44px;text-align:center;background-color:#ffffff;-moz-border-radius:14px;padding:24px 26px">
+      <div style="font-family:'Arial Black','Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.12;font-size:26px;color:#4d7a26">Varmt välkomna!</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SIDFOT -->
+<div style="clear:both;background-color:#171413;color:#ffffff;padding:54px 22px 34px">
+  <div style="max-width:1036px;margin:0 auto">
+    <div style="margin-right:-30px">
+
+      <div class="fot-spalt" style="float:left;width:36%;min-width:230px">
+        <div style="margin:0 30px 30px 0">
+          <div style="font-family:'Arial Black',Arial,sans-serif;font-size:29px;line-height:1;letter-spacing:.06em;color:#ffffff">RSMH</div>
+          <div style="font-size:15px;line-height:1.35;letter-spacing:.08em;text-transform:uppercase;color:#ffffff;border-top:3px solid #d63a3a;padding-top:4px;margin-top:3px">Riksförbundet för Social &amp; Mental Hälsa</div>
+          <p style="margin:14px 0 0;font-size:16px;color:#ffffff">RSMH jobbar för att bryta ofrivillig ensamhet genom att skapa meningsfulla
+            och trivsamma träffar där ekonomin inte är avgörande.</p>
+        </div>
+      </div>
+
+      <div class="fot-spalt" style="float:left;width:32%;min-width:220px">
+        <div style="margin:0 30px 30px 0">
+          <div style="color:#ffffff;text-transform:uppercase;font-size:14px;font-weight:bold;letter-spacing:.12em;line-height:1.4;margin-bottom:10px">RSMH Kalix – Ljusglimten</div>
+          <div style="font-size:16px;margin-bottom:6px;color:#ffffff">Folkets Hus, Kalix</div>
+          <div style="font-size:16px;margin-bottom:6px"><a href="tel:0760228980" style="color:#c9dd9f;text-decoration:none">076-022 89 80</a></div>
+          <div style="font-size:16px;margin-bottom:6px"><a href="mailto:rsmh.kalix@hotmail.com" style="color:#c9dd9f;text-decoration:none">rsmh.kalix@hotmail.com</a></div>
+        </div>
+      </div>
+
+      <div class="fot-spalt" style="float:left;width:32%;min-width:200px">
+        <div style="margin:0 30px 30px 0">
+          <div style="color:#ffffff;text-transform:uppercase;font-size:14px;font-weight:bold;letter-spacing:.12em;line-height:1.4;margin-bottom:10px">Följ oss</div>
+          <div style="font-size:16px;margin-bottom:6px"><a href="https://www.facebook.com/RsmhLjusglimtenKalix/" target="_blank" style="color:#c9dd9f;text-decoration:none">Facebook – RSMH Kalix Ljusglimten</a></div>
+          <div style="font-size:16px;margin-bottom:6px"><a href="https://www.instagram.com/rsmh.kalix/" target="_blank" style="color:#c9dd9f;text-decoration:none">Instagram: @rsmh.kalix</a></div>
+        </div>
+      </div>
+
+      <div style="clear:both"><!-- Radbrytare --></div>
+    </div>
+
+    <div style="clear:both;margin-top:8px;padding-top:18px;border-top:1px solid #3a3634;font-size:15px;line-height:1.6;color:#ffffff">
+      <div style="overflow:hidden;color:#ffffff">&copy; 2026 RSMH Kalix – Ljusglimten. Sedan 1967 kämpar RSMH för att alla ska ha samma rättigheter, oavsett mående.</div>
+      <div style="clear:both"><!-- Radbrytare --></div>
+    </div>
+
+  </div>
+</div>
+
+<a class="topp-knapp" href="#hem" title="Till toppen av sidan" style="position:fixed;right:22px;bottom:22px;z-index:60;width:48px;height:48px;-moz-border-radius:24px;background-color:#4d7a26;color:#ffffff;font-size:22px;line-height:48px;text-align:center;text-decoration:none">&#8593;</a>
+
+
+<!-- ===================== UPPLÄSNING (TEXT-TILL-TAL) ===================== -->
+<style type="text/css">
+/* --- Uppläsning: gemensamma variabler --- */
+:root {
+  --tts-gron:      #4d7a26;
+  --tts-gron-ljus: #6fa83c;
+  --tts-gron-bak:  #eef3e2;
+  --tts-mork:      #171413;
+  --tts-gra:       #6b6560;
+  --tts-linje:     #e2e6d8;
+}
+
+.tts-ui, .tts-ui * { box-sizing: border-box; }
+.tts-ui [hidden]   { display: none !important; }
+
+/* --- Läsmarkering (CSS Custom Highlight API) --- */
+::highlight(tts-stycke) { background-color: #e6efd6; color: #171413; }
+::highlight(tts-ord)    { background-color: #ffd54a; color: #171413; }
+
+/* --- Reservmarkering för webbläsare utan Highlight API --- */
+.tts-aktiv-reserv {
+  background-color: #e6efd6 !important;
+  box-shadow: 0 0 0 6px #e6efd6;
+  border-radius: 4px;
+}
+.tts-aktiv-reserv.tts-ljus-text {
+  background-color: rgba(255,255,255,.22) !important;
+  box-shadow: 0 0 0 6px rgba(255,255,255,.22);
+}
+
+/* --- Startknapp: bara symboler, alltid lika stor --- */
+.tts-start {
+  position: fixed; left: 22px; bottom: 22px; z-index: 60;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px; padding: 0;
+  border: 0; cursor: pointer;
+  font-family: inherit; line-height: 1;
+  color: #ffffff; background-color: #33540f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px rgba(23,20,19,.20), 0 10px 26px rgba(23,20,19,.38);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.tts-start:hover { transform: translateY(-2px); background-color: #22390a; box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px rgba(23,20,19,.28), 0 14px 30px rgba(23,20,19,.42); }
+
+.tts-start .tts-ik  { display: block; width: 32px; height: 32px; }
+.tts-start .tts-sym { font-size: 26px; }
+
+.tts-ui button:focus-visible,
+.tts-ui select:focus-visible,
+.tts-ui input:focus-visible { outline: 3px solid #4d7a26; outline-offset: 2px; }
+
+/* --- Inställningar: dialogruta som öppnas med Alt+O --- */
+.tts-modal {
+  position: fixed; inset: 0; z-index: 80;
+  display: flex; align-items: center; justify-content: center;
+  padding: 22px;
+  background-color: rgba(23,20,19,.55);
+}
+.tts-modal[hidden] { display: none !important; }
+.tts-kort {
+  position: relative;
+  width: 100%; max-width: 760px; max-height: 100%;
+  overflow-y: auto;
+  background-color: #ffffff; color: #171413;
+  border-top: 5px solid #6fa83c; border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(23,20,19,.42);
+  padding: 22px 26px 24px;
+}
+.tts-stang {
+  position: absolute; top: 14px; right: 14px;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 2px solid transparent; background-color: #eef3e2; color: #171413;
+  font-family: inherit; font-size: 16px; font-weight: bold; line-height: 1;
+  cursor: pointer;
+}
+.tts-stang:hover { background-color: #d9e5c2; }
+
+/* --- Inställningspanel --- */
+.tts-panel { padding: 0; }
+.tts-panel h2 {
+  font-family: 'Arial Black','Segoe UI',Arial,sans-serif; text-transform: uppercase;
+  letter-spacing: .02em; font-size: 15px; margin: 0 0 14px; color: #4d7a26;
+}
+.tts-natt { display: flex; flex-wrap: wrap; gap: 18px 26px; }
+.tts-falt { flex: 1 1 240px; min-width: 200px; }
+.tts-falt label,
+.tts-falt .tts-etikett {
+  display: block; font-size: 13px; font-weight: bold; letter-spacing: .06em;
+  text-transform: uppercase; color: #6b6560; margin-bottom: 6px;
+}
+.tts-falt select {
+  width: 100%; font-family: inherit; font-size: 15px; color: #171413;
+  padding: 9px 10px; border: 2px solid #e2e6d8; border-radius: 10px; background-color: #ffffff;
+}
+.tts-falt input[type="range"] { width: 100%; accent-color: #4d7a26; }
+.tts-varde { font-weight: bold; color: #171413; font-size: 15px; }
+
+/* --- Rostprov och rostinformation --- */
+.tts-prov {
+  margin-top: 10px; cursor: pointer; font-family: inherit;
+  font-size: 14px; font-weight: bold; letter-spacing: .02em;
+  color: #4d7a26; background-color: #ffffff;
+  border: 2px solid #6fa83c; border-radius: 999px; padding: 7px 15px;
+  transition: background-color .15s ease, color .15s ease;
+}
+.tts-prov:hover { background-color: #4d7a26; border-color: #4d7a26; color: #ffffff; }
+.tts-tips {
+  margin: 9px 0 0; font-size: 13px; line-height: 1.55; color: #6b6560;
+  text-transform: none; letter-spacing: 0; font-weight: normal;
+}
+.tts-val   { display: block; font-size: 15px; margin-bottom: 9px; cursor: pointer; text-transform: none; letter-spacing: 0; color: #171413; font-weight: normal; }
+.tts-val input { margin-right: 8px; accent-color: #4d7a26; }
+.tts-hjalp { font-size: 14px; color: #6b6560; margin: 14px 0 0; line-height: 1.7; }
+.tts-hjalp kbd {
+  font-family: inherit; font-size: 13px; font-weight: bold; background-color: #eef3e2;
+  border: 1px solid #e2e6d8; border-radius: 6px; padding: 1px 6px; color: #171413;
+}
+.tts-varning {
+  margin: 14px 0 0; font-size: 14px; line-height: 1.55; color: #7a4a00;
+  background-color: #fff5e0; border-left: 5px solid #e0a52a;
+  padding: 10px 14px; border-radius: 8px;
+}
+
+/* --- Avsnittsknappar i innehållet --- */
+.tts-avsnitt {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  font-family: inherit; font-size: 15px; font-weight: bold; letter-spacing: .02em;
+  color: #4d7a26; background-color: #ffffff;
+  border: 2px solid #6fa83c; border-radius: 999px;
+  padding: 9px 18px; margin: 0 0 18px;
+  transition: background-color .15s ease, color .15s ease, transform .15s ease;
+}
+.tts-avsnitt:hover { background-color: #4d7a26; border-color: #4d7a26; color: #ffffff; transform: translateY(-1px); }
+.tts-avsnitt.tts-pa-gron { background-color: transparent; color: #ffffff; border-color: #a9cd6e; }
+.tts-avsnitt.tts-pa-gron:hover { background-color: #ffffff; color: #4d7a26; border-color: #ffffff; }
+.tts-avsnitt[aria-pressed="true"] { background-color: #4d7a26; border-color: #4d7a26; color: #ffffff; }
+
+/* --- Startdelens lyssnaknapp --- */
+.tts-hero {
+  display: inline-flex; align-items: center; gap: 12px; cursor: pointer; font-family: inherit;
+  color: #4d7a26; background-color: #ffffff; border: 3px solid #4d7a26;
+  padding: 15px 33px; border-radius: 999px; font-weight: bold; font-size: 21px;
+  letter-spacing: .03em; white-space: nowrap; line-height: 1.2;
+  vertical-align: middle;
+  box-shadow: 0 8px 22px rgba(77,122,38,.18);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease;
+}
+.tts-hero-ik { font-size: 26px; line-height: 1; }
+.tts-hero:hover {
+  transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.22);
+  background-color: #4d7a26; color: #ffffff;
+}
+.tts-hero:focus-visible { outline: 3px solid #4d7a26; outline-offset: 3px; }
+
+#hem .knapprad a:last-of-type { margin-right: 18px; }
+
+body.tts-peka .tts-lasbar { cursor: pointer; }
+
+@media (hover: hover) {
+  body.tts-peka .tts-lasbar.tts-peka-pa {
+    background-color: #4d7a26;
+    box-shadow: 0 0 0 6px #4d7a26;
+    border-radius: 4px;
+  }
+  body.tts-peka .tts-lasbar.tts-peka-pa,
+  body.tts-peka .tts-lasbar.tts-peka-pa * { color: #ffffff !important; }
+
+  body.tts-peka .tts-lasbar.tts-ljus-text.tts-peka-pa {
+    background-color: rgba(255,255,255,.22);
+    box-shadow: 0 0 0 6px rgba(255,255,255,.22);
+  }
+}
+
+.tts-sr {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+@media screen and (max-width: 760px) {
+  .tts-start     { left: 14px; bottom: 14px; }
+  .tts-hero      { display: inline-flex; font-size: 19px; padding: 15px 26px; }
+}
+@media screen and (max-width: 640px) {
+  .tts-hero { display: flex; width: 100%; justify-content: center; margin: 0 0 12px; }
+}
+@media screen and (max-width: 560px) {
+  .tts-modal { padding: 10px; }
+  .tts-kort  { padding: 18px 16px 20px; }
+  .tts-falt  { min-width: 0; }
+}
+@media screen and (max-width: 420px) {
+  .tts-hero    { font-size: 17px; padding: 14px 21px; gap: 8px; }
+  .tts-hero-ik { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tts-start, .tts-avsnitt, .tts-hero { transition: none; }
+  .tts-start:hover, .tts-avsnitt:hover, .tts-hero:hover    { transform: none; }
+}
+</style>
+
+<div class="tts-ui" id="tts-root">
+
+  <button type="button" class="tts-start" id="tts-oppna" aria-label="Lyssna på hela sidan" title="Alt+P spela eller pausa · Alt+S stoppa · Alt+vänster/höger stycke · Alt+plus/minus hastighet">
+    <svg class="tts-ik" viewBox="-1.7 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9.5h3.6L11.8 5v14L6.6 14.5H3a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1z"/><path fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" d="M14.7 9.2a4 4 0 0 1 0 5.6M17.5 6.4a8 8 0 0 1 0 11.2"/></svg>
+  </button>
+
+  <div class="tts-modal" id="tts-modal" hidden>
+    <div class="tts-kort" role="dialog" aria-modal="true" aria-labelledby="tts-modal-rubrik" tabindex="-1" id="tts-kort">
+      <button type="button" class="tts-stang" id="tts-stang" title="Stäng (Esc)" aria-label="Stäng inställningarna">&#10005;</button>
+      <div class="tts-panel">
+        <h2 id="tts-modal-rubrik">Inställningar för uppläsning</h2>
+
+        <div class="tts-natt">
+
+          <div class="tts-falt">
+            <label for="tts-rost">Röst för svenska</label>
+            <select id="tts-rost"></select>
+            <button type="button" class="tts-prov" id="tts-prov">&#128266; Testa rösten</button>
+            <p class="tts-tips" id="tts-tips"></p>
+          </div>
+
+          <div class="tts-falt">
+            <label for="tts-rate">Hastighet – <span class="tts-varde" id="tts-rate-varde">1,0×</span></label>
+            <input type="range" id="tts-rate" min="0.8" max="1.25" step="0.05" value="1">
+          </div>
+
+          <div class="tts-falt">
+            <label for="tts-ton">Tonläge – <span class="tts-varde" id="tts-ton-varde">1,0</span></label>
+            <input type="range" id="tts-ton" min="0.6" max="1.4" step="0.05" value="1">
+          </div>
+
+          <div class="tts-falt">
+            <label for="tts-volym">Volym – <span class="tts-varde" id="tts-volym-varde">100 %</span></label>
+            <input type="range" id="tts-volym" min="0" max="1" step="0.05" value="1">
+          </div>
+
+          <div class="tts-falt">
+            <span class="tts-etikett">Visning</span>
+            <label class="tts-val"><input type="checkbox" id="tts-folj" checked>Följ med i texten</label>
+            <label class="tts-val"><input type="checkbox" id="tts-markera" checked>Markera ordet som läses</label>
+            <label class="tts-val"><input type="checkbox" id="tts-klick" checked>Klicka på text för att läsa därifrån</label>
+          </div>
+
+        </div>
+
+        <p class="tts-hjalp">
+          Kortkommandon: <kbd>Alt</kbd>+<kbd>P</kbd> spela eller pausa &nbsp;·&nbsp;
+          <kbd>Alt</kbd>+<kbd>&#8592;</kbd> / <kbd>Alt</kbd>+<kbd>&#8594;</kbd> föregående eller nästa stycke &nbsp;·&nbsp;
+          <kbd>Alt</kbd>+<kbd>+</kbd> / <kbd>Alt</kbd>+<kbd>&#8722;</kbd> öka eller minska hastighet &nbsp;·&nbsp;
+          <kbd>Alt</kbd>+<kbd>S</kbd> stoppa &nbsp;·&nbsp;
+          <kbd>Alt</kbd>+<kbd>O</kbd> öppna och stäng den här rutan.
+        </p>
+
+        <p class="tts-varning" id="tts-varning" hidden></p>
+      </div>
+    </div>
+  </div>
+
+  <p class="tts-sr" id="tts-live" role="status" aria-live="polite"></p>
+
+</div>
+
+<script type="text/javascript">
+/* =====================================================================
+   Uppläsning av sidan (text-till-tal)
+   Bygger en läsplan av sidans innehåll, läser upp den med webbläsarens
+   eller operativsystemets inbyggda talsyntes och markerar stycke och ord
+   medan de läses. Ingen ljudfil, ingen JSON – texten är källan.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  var synth = window.speechSynthesis;
+
+  var harTal = !!(synth && typeof window.SpeechSynthesisUtterance === "function");
+  if (!harTal) {
+    synth = {
+      speak: function () {}, cancel: function () {}, pause: function () {},
+      resume: function () {}, getVoices: function () { return []; },
+      addEventListener: function () {},
+      speaking: false, pending: false, paused: false
+    };
+  }
+
+  var root = document.getElementById("tts-root");
+
+  /* ---------- Element ---------- */
+  var el = {
+    oppna:   document.getElementById("tts-oppna"),
+    live:    document.getElementById("tts-live"),
+    modal:   document.getElementById("tts-modal"),
+    kort:    document.getElementById("tts-kort"),
+    stang:   document.getElementById("tts-stang"),
+    rost:    document.getElementById("tts-rost"),
+    prov:    document.getElementById("tts-prov"),
+    tips:    document.getElementById("tts-tips"),
+    rate:    document.getElementById("tts-rate"),
+    rateV:   document.getElementById("tts-rate-varde"),
+    ton:     document.getElementById("tts-ton"),
+    tonV:    document.getElementById("tts-ton-varde"),
+    volym:   document.getElementById("tts-volym"),
+    volymV:  document.getElementById("tts-volym-varde"),
+    folj:    document.getElementById("tts-folj"),
+    markera: document.getElementById("tts-markera"),
+    klick:   document.getElementById("tts-klick"),
+    varning: document.getElementById("tts-varning")
+  };
+
+  /* ---------- Inställningar ---------- */
+  var NYCKEL = "rsmh-tts-sv-v3";
+  var inst = { rate: 1, ton: 1, volym: 1, rost: "",
+               folj: true, markera: true, klick: true };
+
+  var EJ_SPARADE = { rate: true };
+
+  try {
+    var sparat = window.localStorage.getItem(NYCKEL);
+    if (sparat) {
+      var p = JSON.parse(sparat);
+      for (var k in inst) {
+        if (EJ_SPARADE[k]) { continue; }
+        if (p && Object.prototype.hasOwnProperty.call(p, k)) { inst[k] = p[k]; }
+      }
+    }
+  } catch (e) { /* localStorage kan vara blockerat – kör med standardvärden */ }
+
+  function sparaInst() {
+    try { window.localStorage.setItem(NYCKEL, JSON.stringify(inst)); } catch (e) { /* ignoreras */ }
+  }
+
+  function fmtTal(v, suffix) {
+    return v.toFixed(2).replace(/0$/, "").replace(".", ",") + (suffix || "");
+  }
+
+  /* =====================================================================
+     1. Bygg läsplanen ur sidans innehåll
+     ===================================================================== */
+
+  var INLINE = { A:1, B:1, STRONG:1, I:1, EM:1, U:1, SPAN:1, SMALL:1, BR:1, CODE:1,
+                 ABBR:1, SUP:1, SUB:1, MARK:1, TIME:1, FONT:1, BDI:1, WBR:1 };
+  var HOPPA  = { SCRIPT:1, STYLE:1, NOSCRIPT:1, IFRAME:1, SVG:1, CANVAS:1, VIDEO:1,
+                 AUDIO:1, OBJECT:1, EMBED:1, SELECT:1, TEXTAREA:1, INPUT:1, BUTTON:1 };
+
+  var AVSNITT = {
+    hem:         "Start",
+    om:          "Om RSMH",
+    aktiviteter: "Aktiviteter",
+    medlem:      "Bli medlem",
+    kontakt:     "Kontakt"
+  };
+
+  var MAX_BIT = 160;
+
+  var block = [];
+
+  function skaHoppasOver(node) {
+    if (HOPPA[node.nodeName]) { return true; }
+    if (node.classList && (node.classList.contains("tts-ui") ||
+                           node.classList.contains("sidhuvud") ||
+                           node.classList.contains("topp-knapp"))) { return true; }
+    if (node.hasAttribute && (node.hasAttribute("data-tts-hoppa") ||
+                              node.getAttribute("aria-hidden") === "true")) { return true; }
+    return false;
+  }
+
+  function harBokstav(text) { return /[0-9A-Za-zÅÄÖåäöÉéÜü]/.test(text); }
+
+  function samlaBlock(rootEl) {
+    (function ga(node) {
+      var grupp      = [];
+      var underNoder = node.childNodes;
+
+      function stangGrupp() {
+        if (grupp.length) { laggTillBlock(grupp); grupp = []; }
+      }
+
+      for (var i = 0; i < underNoder.length; i++) {
+        var b = underNoder[i];
+        if (b.nodeType === 3) {
+          if (b.nodeValue && b.nodeValue.trim()) { grupp.push(b); }
+          else if (grupp.length) { grupp.push(b); }
+        } else if (b.nodeType === 1) {
+          if (skaHoppasOver(b)) { stangGrupp(); continue; }
+          if (INLINE[b.nodeName]) { grupp.push(b); }
+          else { stangGrupp(); ga(b); }
+        }
+      }
+      stangGrupp();
+    })(rootEl);
+  }
+
+  function laggTillBlock(noder) {
+    while (noder.length && !(noder[0].textContent || "").trim()) { noder.shift(); }
+    while (noder.length && !(noder[noder.length - 1].textContent || "").trim()) { noder.pop(); }
+    if (!noder.length) { return; }
+
+    var raw = "", karta = [];
+    for (var i = 0; i < noder.length; i++) {
+      (function textNoder(n) {
+        if (n.nodeType === 3) {
+          var v = n.nodeValue || "";
+          if (v.length) {
+            karta.push({ nod: n, fran: raw.length, till: raw.length + v.length });
+            raw += v;
+          }
+        } else if (n.nodeType === 1 && !skaHoppasOver(n)) {
+          if (n.nodeName === "BR") { raw += " "; }
+          for (var j = 0; j < n.childNodes.length; j++) { textNoder(n.childNodes[j]); }
+        }
+      })(noder[i]);
+    }
+    if (!harBokstav(raw)) { return; }
+
+    var tal = byggTal(raw);
+    if (!tal.text.trim()) { return; }
+
+    var foralder = noder[0].parentNode;
+    var avsnitt  = "Sidfot";
+    for (var f = foralder; f && f !== document.body; f = f.parentNode) {
+      if (f.id && AVSNITT[f.id]) { avsnitt = AVSNITT[f.id]; break; }
+    }
+
+    block.push({
+      noder:    noder,
+      foralder: foralder,
+      raw:      raw,
+      karta:    karta,
+      text:     tal.text,
+      delar:    tal.delar,
+      bitar:    delaIBitar(tal.text, MAX_BIT),
+      avsnitt:  avsnitt
+    });
+  }
+
+  var SIFFERORD = ["noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio"];
+
+  function sifferSerie(m) {
+    if (m.replace(/\D/g, "").length < 6) { return null; }
+    var ut = "", grupp = "";
+    for (var i = 0; i < m.length; i++) {
+      var c = m.charAt(i);
+      if (c >= "0" && c <= "9") { grupp += SIFFERORD[+c] + " "; }
+      else if (grupp) { ut += grupp + ", "; grupp = ""; }
+    }
+    return " " + (ut + grupp).replace(/\s+,/g, ",").replace(/\s+$/, "") + " ";
+  }
+
+  function lasAdress(m) {
+    return " " + m.replace(/RSMH/gi, "Ärr Ess Emm Hå")
+                  .replace(/^www\b/i, "ve ve ve")
+                  .replace(/-/g,  " bindestreck ")
+                  .replace(/_/g,  " understreck ")
+                  .replace(/\//g, " snedstreck ")
+                  .replace(/@/g,  " snabel-a ")
+                  .replace(/\./g, " punkt ")
+                  .replace(/\s+/g, " ").replace(/^ | $/g, "") + " ";
+  }
+
+  function forkortning(ord) {
+    return function (m, raw, pos) {
+      if (!/\.$/.test(m)) { return ord; }
+      return /^\s*(?:[A-ZÅÄÖ]|$)/.test(raw.slice(pos + m.length)) ? ord + "." : ord;
+    };
+  }
+
+  var REGLER = [
+    [/\s+/y, " "],
+    [/(?:[\uD800-\uDBFF][\uDC00-\uDFFF]|[\u2190-\u21FF\u2300-\u27BF\u2B00-\u2BFF\uFE0E\uFE0F\u200D\u20E3])+/y, " "],
+    [/[»«„“”"]/y, ""],
+    [/©/y, ""],
+    [/[A-Za-zÅÄÖåäö0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/y, lasAdress],
+    [/@[A-Za-zÅÄÖåäö0-9._]{2,}/y, lasAdress],
+    [/(?:https?:\/\/)?www\.[A-Za-z0-9._\-\/]+/y, lasAdress],
+    [/RSMH/y,                             "Ärr Ess Emm Hå"],
+    [/SMS(?=\W|$)/y,                      "Ess Emm Ess",                true],
+    [/OBS\.?/y,                           forkortning("observera"),     true],
+    [/t\.\s?ex\.?/iy,                     forkortning("till exempel"),  true],
+    [/bl\.\s?a\.?/iy,                     forkortning("bland annat"),   true],
+    [/fr\.\s?o\.\s?m\.?/iy,               forkortning("från och med"),  true],
+    [/t\.\s?o\.\s?m\.?/iy,                forkortning("till och med"),  true],
+    [/d\.\s?v\.\s?s\.?|dvs\.?(?=\W|$)/iy, forkortning("det vill säga"), true],
+    [/o\.\s?s\.\s?v\.?|osv\.?(?=\W|$)/iy, forkortning("och så vidare"), true],
+    [/m\.\s?m\.?/iy,                      forkortning("med mera"),      true],
+    [/kl\.(?=\s?\d)/iy,                   "klockan",                    true],
+    [/ca\.?(?=\s)/iy,                     forkortning("cirka"),         true],
+    [/nr\.?(?=\s?\d)/iy,                  "nummer",                     true],
+    [/tel\.(?=\s)/iy,                     forkortning("telefon"),       true],
+    [/ev\.(?=\s)/iy,                      forkortning("eventuellt"),    true],
+    [/kr\s*\/\s*år/iy,                    "kronor per år", true],
+    [/kr(?=\W|$)/iy,                      "kronor",        true],
+    [/%/y,                                " procent"],
+    [/&/y,                                "och"],
+    [/@/y,                                " snabel-a "],
+    [/\d[\d\u00a0 \-]{4,}\d/y, sifferSerie],
+    [/[–—]/y, ","]
+  ];
+
+  function ordborjan(raw, pos) {
+    return pos === 0 || !/[0-9A-Za-zÅÄÖåäöÉéÜü]/.test(raw.charAt(pos - 1));
+  }
+
+  function regelTraff(raw, pos) {
+    for (var r = 0; r < REGLER.length; r++) {
+      if (REGLER[r][2] && !ordborjan(raw, pos)) { continue; }
+      var re = REGLER[r][0];
+      re.lastIndex = pos;
+      var m = re.exec(raw);
+      if (!m || !m[0].length) { continue; }
+      var ut = REGLER[r][1];
+      if (typeof ut === "function") {
+        ut = ut(m[0], raw, pos);
+        if (ut === null) { continue; }
+      }
+      return { langd: m[0].length, ut: ut };
+    }
+    return null;
+  }
+
+  function byggTal(raw) {
+    var delar = [], ut = "", i = 0;
+    while (i < raw.length) {
+      var t = regelTraff(raw, i);
+      if (t) {
+        delar.push({ fran: i, till: i + t.langd, uFran: ut.length, uLangd: t.ut.length, exakt: false });
+        ut += t.ut;
+        i  += t.langd;
+        continue;
+      }
+      var j = i + 1;
+      while (j < raw.length && !regelTraff(raw, j)) { j++; }
+      delar.push({ fran: i, till: j, uFran: ut.length, uLangd: j - i, exakt: true });
+      ut += raw.slice(i, j);
+      i = j;
+    }
+    return { text: ut, delar: delar };
+  }
+
+  function talTillRaw(bl, uIndex, uLangd) {
+    var d = bl.delar, lo = 0, hi = d.length - 1, tr = null;
+    while (lo <= hi) {
+      var mi = (lo + hi) >> 1;
+      if (uIndex < d[mi].uFran) { hi = mi - 1; }
+      else if (uIndex >= d[mi].uFran + d[mi].uLangd) { lo = mi + 1; }
+      else { tr = d[mi]; break; }
+    }
+    if (!tr) { tr = d[d.length - 1]; }
+    if (!tr.exakt) { return [tr.fran, tr.till]; }
+
+    var s = tr.fran + (uIndex - tr.uFran), e;
+    if (uLangd && uLangd > 0) {
+      e = Math.min(bl.raw.length, s + uLangd);
+    } else {
+      e = s;
+      while (e < bl.raw.length && !/\s/.test(bl.raw.charAt(e))) { e++; }
+    }
+    if (e <= s) { e = Math.min(bl.raw.length, s + 1); }
+    return [s, e];
+  }
+
+  function delaIBitar(text, max) {
+    var bitar = [], start = 0;
+    while (start < text.length) {
+      if (text.length - start <= max) {
+        bitar.push({ fran: start, text: text.slice(start) });
+        break;
+      }
+      var fonster = text.slice(start, start + max);
+      var brytS = -1, brytK = -1, m, re;
+
+      re = /[.!?…:;]\s/g;
+      while ((m = re.exec(fonster)) !== null) { brytS = m.index + m[0].length; }
+      re = /[,)]\s/g;
+      while ((m = re.exec(fonster)) !== null) { brytK = m.index + m[0].length; }
+
+      var bryt = brytS > 40 ? brytS : (brytK > 40 ? brytK : fonster.lastIndexOf(" ") + 1);
+      if (bryt <= 0) { bryt = max; }
+      bitar.push({ fran: start, text: text.slice(start, start + bryt) });
+      start += bryt;
+    }
+    return bitar.filter(function (b) { return b.text.trim().length > 0; });
+  }
+
+  /* =====================================================================
+     2. Kö och positionsberäkning
+     ===================================================================== */
+  var ko = [], totalTecken = 0;
+
+  function byggKo() {
+    block = []; ko = []; totalTecken = 0;
+    samlaBlock(document.body);
+    for (var b = 0; b < block.length; b++) {
+      for (var i = 0; i < block[b].bitar.length; i++) {
+        totalTecken += block[b].bitar[i].text.length;
+        ko.push({ b: b, fran: block[b].bitar[i].fran, text: block[b].bitar[i].text });
+      }
+    }
+  }
+
+  function forstaBiten(blockIndex) {
+    for (var i = 0; i < ko.length; i++) {
+      if (ko[i].b === blockIndex) { return i; }
+    }
+    return 0;
+  }
+
+  /* =====================================================================
+     3. Markering i texten
+     ===================================================================== */
+  var harHighlight = (typeof window.Highlight === "function" &&
+                      typeof CSS !== "undefined" && CSS.highlights);
+  var hlStycke = null, hlOrd = null, reservEl = null;
+
+  if (harHighlight) {
+    try {
+      hlStycke = new window.Highlight();
+      hlOrd    = new window.Highlight();
+      CSS.highlights.set("tts-stycke", hlStycke);
+      CSS.highlights.set("tts-ord", hlOrd);
+    } catch (e) { harHighlight = false; }
+  }
+
+  function nodPosition(bl, index) {
+    for (var i = 0; i < bl.karta.length; i++) {
+      var k = bl.karta[i];
+      if (index >= k.fran && index <= k.till) {
+        return { nod: k.nod, offset: index - k.fran };
+      }
+    }
+    var sista = bl.karta[bl.karta.length - 1];
+    return sista ? { nod: sista.nod, offset: sista.till - sista.fran } : null;
+  }
+
+  function skapaRange(bl, fran, till) {
+    var a = nodPosition(bl, fran), b = nodPosition(bl, till);
+    if (!a || !b) { return null; }
+    try {
+      var r = document.createRange();
+      r.setStart(a.nod, Math.min(a.offset, a.nod.nodeValue.length));
+      r.setEnd(b.nod, Math.min(b.offset, b.nod.nodeValue.length));
+      return r.collapsed && fran !== till ? null : r;
+    } catch (e) { return null; }
+  }
+
+  function rensaMarkering() {
+    if (harHighlight) { hlStycke.clear(); hlOrd.clear(); }
+    if (reservEl) { reservEl.classList.remove("tts-aktiv-reserv"); reservEl = null; }
+  }
+
+  function markeraStycke(bl) {
+    if (harHighlight) {
+      hlStycke.clear();
+      hlOrd.clear();
+      var r = skapaRange(bl, 0, bl.raw.length);
+      if (r) { hlStycke.add(r); }
+    } else {
+      if (reservEl) { reservEl.classList.remove("tts-aktiv-reserv"); }
+      reservEl = (bl.foralder && bl.foralder.nodeType === 1) ? bl.foralder : null;
+      if (reservEl) { reservEl.classList.add("tts-aktiv-reserv"); }
+    }
+  }
+
+  function markeraOrd(bl, fran, till) {
+    if (!harHighlight || !inst.markera) { return; }
+    hlOrd.clear();
+    var r = skapaRange(bl, fran, till);
+    if (r) { hlOrd.add(r); }
+  }
+
+  /* =====================================================================
+     4. Rullning som följer med texten
+     ===================================================================== */
+  var senasteEgenRullning = 0;
+  ["wheel", "touchmove", "keydown"].forEach(function (h) {
+    window.addEventListener(h, function (e) {
+      if (h === "keydown" && !/^(Arrow|Page|Home|End| )/.test(e.key || "")) { return; }
+      if (root.contains(e.target)) { return; }
+      senasteEgenRullning = Date.now();
+    }, { passive: true });
+  });
+
+  function rullaTill(bl) {
+    if (!inst.folj) { return; }
+    if (Date.now() - senasteEgenRullning < 5000) { return; }
+    var mal = (bl.foralder && bl.foralder.nodeType === 1) ? bl.foralder : null;
+    if (!mal) { return; }
+    var r = mal.getBoundingClientRect();
+    var h = window.innerHeight || document.documentElement.clientHeight;
+    if (r.top > h * 0.18 && r.bottom < h * 0.72) { return; }
+    var mjuk = !window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    try { mal.scrollIntoView({ behavior: mjuk ? "smooth" : "auto", block: "center" }); }
+    catch (e) { mal.scrollIntoView(); }
+  }
+
+  /* =====================================================================
+     5. Röster – välj en röst som verkligen talar svenska
+     ===================================================================== */
+  var roster = [], svRoster = [], valdRost = null, autoRost = true;
+
+  var PROVMENING = "Sju sköna sjuksköterskor sköter sjuttiosju sjösjuka sjömän. " +
+                   "Välkommen till RSMH Kalix, Ljusglimten.";
+
+  function langKod(r) { return String((r && r.lang) || "").replace(/_/g, "-").toLowerCase(); }
+
+  function arSvensk(r) {
+    if (/^sv(-|$)/.test(langKod(r))) { return true; }
+    return /svensk|swedish|sverige|sweden/i.test(String((r && r.name) || ""));
+  }
+
+  function svPoang(r) {
+    var namn = String(r.name || ""), l = langKod(r), p = 0;
+
+    if (/^sv-se/.test(l))      { p += 44; }
+    else if (/^sv-fi/.test(l)) { p += 24; }
+    else if (/^sv/.test(l))    { p += 34; }
+
+    if (/sofie/i.test(namn))            { p += 16; }
+    if (/natural|neural/i.test(namn))   { p += 34; }
+    if (/premium|enhanced/i.test(namn)) { p += 26; }
+    if (/^google/i.test(namn))          { p += 26; }
+    if (/online/i.test(namn))           { p += 8;  }
+    if (/desktop/i.test(namn))          { p -= 18; }
+    if (/compact|espeak|pico|novelty|eloquence/i.test(namn)) { p -= 34; }
+
+    if (r.localService) { p += 6; }
+    if (r.default)      { p += 2; }
+    return p;
+  }
+
+  function hittaRost(nyckel) {
+    var i;
+    if (!nyckel) { return null; }
+    for (i = 0; i < roster.length; i++) { if (roster[i].voiceURI === nyckel) { return roster[i]; } }
+    for (i = 0; i < roster.length; i++) { if (roster[i].name === nyckel)     { return roster[i]; } }
+    return null;
+  }
+
+  function visaTips() {
+    if (!el.tips) { return; }
+    if (!valdRost) {
+      el.tips.textContent = "Webbläsaren får själv välja röst utifrån språkkoden sv-SE och efter vad som finns tillgängligt.";
+      return;
+    }
+    var t = (autoRost ? "Vald automatiskt: " : "Vald röst: ") +
+            valdRost.name + " (" + (valdRost.lang || "?") + "). ";
+    if (!arSvensk(valdRost)) {
+      t += "Rösten är inte svensk, så svensk text uttalas med brytning.";
+    } else if (!valdRost.localService) {
+      t += "Rösten hämtas via internet och kräver uppkoppling.";
+    } else {
+      t += "Rösten finns i din egen dator och fungerar utan uppkoppling.";
+    }
+    el.tips.textContent = t;
+  }
+
+  function laddaRoster() {
+    var nya = synth.getVoices() || [];
+    if (!nya.length) { return; }
+    roster = nya;
+
+    svRoster = roster.filter(arSvensk).sort(function (a, b) { return svPoang(b) - svPoang(a); });
+    var ovriga = roster.filter(function (r) { return !arSvensk(r); });
+
+    el.rost.innerHTML = "";
+
+    var gAuto = document.createElement("optgroup");
+    gAuto.label = "Rekommenderat";
+    var oAuto = document.createElement("option");
+    oAuto.value = "";
+    oAuto.textContent = svRoster.length
+      ? "Automatiskt \u2013 bästa svenska rösten (" + svRoster[0].name + ")"
+      : "Automatiskt \u2013 webbläsarens svenska röst";
+    gAuto.appendChild(oAuto);
+    el.rost.appendChild(gAuto);
+
+    function grupp(namn, lista, markeraBast) {
+      if (!lista.length) { return; }
+      var g = document.createElement("optgroup");
+      g.label = namn;
+      for (var i = 0; i < lista.length; i++) {
+        var o = document.createElement("option");
+        o.value = lista[i].voiceURI;
+        o.textContent = (markeraBast && i === 0 ? "\u2605 " : "") +
+                        lista[i].name + " (" + (lista[i].lang || "?") + ")" +
+                        (lista[i].localService ? "" : " \u2013 online");
+        g.appendChild(o);
+      }
+      el.rost.appendChild(g);
+    }
+
+    grupp("Svenska röster", svRoster, true);
+    grupp("Övriga röster \u2013 uttalar svenska med brytning", ovriga, false);
+
+    valdRost = hittaRost(inst.rost);
+    autoRost = !valdRost;
+    if (autoRost) { valdRost = svRoster[0] || null; }
+    el.rost.value = autoRost ? "" : inst.rost;
+    if (el.rost.selectedIndex < 0) { el.rost.value = ""; }
+
+    visaRostvarning();
+    visaTips();
+  }
+
+  function visaRostvarning() {
+    if (svRoster.length && harTal) { el.varning.hidden = true; return; }
+
+    var hur =
+      "Så här lägger du till en svensk röst i webbläsaren:" +
+      "<br>Windows: Inställningar &#8594; Tid och språk &#8594; Språk och region &#8594; " +
+      "Svenska &#8594; Språkalternativ &#8594; Tal." +
+      "<br>Android: Inställningar &#8594; Tillgänglighet &#8594; Text till tal.";
+
+    el.varning.hidden = false;
+    el.varning.innerHTML =
+      (harTal
+        ? "Ingen svensk röst är installerad i den här webbläsaren. Uppläsningen begärs ändå " +
+          "på svenska, men uttalet kan bli utländskt.<br>"
+        : "Den här webbläsaren har ingen talsyntes, så sidan kan inte läsas upp här.<br>") + hur;
+  }
+
+  laddaRoster();
+  if (typeof synth.addEventListener === "function") {
+    synth.addEventListener("voiceschanged", laddaRoster);
+  } else {
+    synth.onvoiceschanged = laddaRoster;
+  }
+
+  (function vantaPaRoster(forsok) {
+    if ((synth.getVoices() || []).length) { laddaRoster(); return; }
+    if (forsok > 20) { return; }
+    window.setTimeout(function () { vantaPaRoster(forsok + 1); }, 250);
+  })(0);
+
+  function provaRost() {
+    stoppa();
+    var u = new SpeechSynthesisUtterance(byggTal(PROVMENING).text);
+    if (valdRost) { u.voice = valdRost; u.lang = valdRost.lang || "sv-SE"; }
+    else          { u.lang = "sv-SE"; }
+    u.rate   = inst.rate;
+    u.pitch  = inst.ton;
+    u.volume = inst.volym;
+    synth.speak(u);
+    meddela("Spelar upp en provmening");
+  }
+
+  if (el.prov) { el.prov.addEventListener("click", provaRost); }
+
+  /* =====================================================================
+     6. Uppspelning
+     ===================================================================== */
+  var lage = "stoppad";       /* stoppad | spelar | pausad */
+  var index = 0;              /* aktuell bit i kön */
+  var aktivtBlock = -1;
+  var stoppaVid = null;       /* sista blockindex vid uppläsning av ett avsnitt */
+  var polett = 0;             /* ogiltigförklarar gamla uppläsningar */
+  var senasteHandelse = 0;
+  var teckenIBit = 0;
+
+  function meddela(txt) { el.live.textContent = txt; }
+
+  function spelaFran(nyIndex, gransBlock) {
+    if (!ko.length) { byggKo(); }
+    if (!ko.length) { return; }
+    index     = Math.max(0, Math.min(ko.length - 1, nyIndex));
+    stoppaVid = (typeof gransBlock === "number") ? gransBlock : null;
+    polett++;
+    synth.cancel();
+    lage = "spelar";
+    var min = polett;
+    window.setTimeout(function () { if (min === polett) { talaBit(); } }, 60);
+    rita();
+  }
+
+  function talaBit() {
+    if (index >= ko.length || (stoppaVid !== null && ko[index].b > stoppaVid)) { klart(); return; }
+
+    var bit = ko[index];
+    var bl  = block[bit.b];
+    var min = polett;
+    var u   = new SpeechSynthesisUtterance(bit.text);
+
+    if (valdRost) {
+      u.voice = valdRost;
+      u.lang  = valdRost.lang || "sv-SE";
+    } else {
+      u.lang  = "sv-SE";
+    }
+    u.rate   = inst.rate;
+    u.pitch  = inst.ton;
+    u.volume = inst.volym;
+
+    teckenIBit = 0;
+
+    u.onstart = function () {
+      if (min !== polett) { return; }
+      senasteHandelse = Date.now();
+      if (aktivtBlock !== bit.b) {
+        aktivtBlock = bit.b;
+        markeraStycke(bl);
+        rullaTill(bl);
+      }
+      rita();
+    };
+
+    u.onboundary = function (e) {
+      if (min !== polett) { return; }
+      senasteHandelse = Date.now();
+      if (typeof e.charIndex === "number") {
+        teckenIBit = e.charIndex;
+        var omr = talTillRaw(bl, bit.fran + e.charIndex, e.charLength || 0);
+        markeraOrd(bl, omr[0], omr[1]);
+      }
+    };
+
+    u.onend = function () {
+      if (min !== polett) { return; }
+      senasteHandelse = Date.now();
+      index++;
+      teckenIBit = 0;
+      if (lage === "spelar") { talaBit(); }
+    };
+
+    u.onerror = function (e) {
+      if (min !== polett) { return; }
+      var fel = e && e.error;
+      if (fel === "interrupted" || fel === "canceled") { return; }
+      index++;
+      if (lage === "spelar") { talaBit(); }
+    };
+
+    senasteHandelse = Date.now();
+    synth.speak(u);
+  }
+
+  function klart() {
+    polett++;
+    synth.cancel();
+    rensaMarkering();
+    aktivtBlock = -1;
+    lage = "stoppad";
+    var text = (stoppaVid !== null) ? "Avsnittet är uppläst" : "Hela sidan är uppläst";
+    stoppaVid = null;
+    index = 0;
+    rita();
+    meddela(text);
+  }
+
+  function spela() {
+    if (!ko.length) { byggKo(); }
+    if (!ko.length) { return; }
+
+    if (lage === "spelar") { return; }
+
+    if (lage === "pausad") {
+      if (synth.paused && synth.speaking) { synth.resume(); lage = "spelar"; rita(); }
+      else { spelaFran(index, stoppaVid); }
+      meddela("Uppläsningen fortsätter");
+      return;
+    }
+
+    spelaFran(index, stoppaVid);
+    meddela("Uppläsningen startar");
+  }
+
+  function pausa() {
+    if (lage !== "spelar") { return; }
+    lage = "pausad";
+
+    try { synth.pause(); } catch (e) { /* ignoreras */ }
+    rita();
+    meddela("Uppläsningen är pausad");
+    window.setTimeout(function () {
+      if (lage === "pausad" && !synth.paused && synth.speaking) {
+        polett++;
+        synth.cancel();
+      }
+    }, 220);
+  }
+
+  function stoppa() {
+    polett++;
+    synth.cancel();
+    rensaMarkering();
+    aktivtBlock = -1;
+    index = 0;
+    stoppaVid = null;
+    lage = "stoppad";
+    rita();
+    meddela("Uppläsningen är stoppad");
+  }
+
+  function hoppa(steg) {
+    if (!ko.length) { byggKo(); }
+    if (!ko.length) { return; }
+    var nuvarande = ko[Math.min(index, ko.length - 1)].b;
+    var b = Math.max(0, Math.min(block.length - 1, nuvarande + steg));
+    var ny = forstaBiten(b);
+    aktivtBlock = -1;
+    rensaMarkering();
+    if (lage === "spelar" || lage === "pausad") { spelaFran(ny, stoppaVid); }
+    else {
+      index = ny;
+      rita();
+    }
+  }
+
+  /* =====================================================================
+     6b. Vakthund
+     ---------------------------------------------------------------------
+     Webbläsaren rapporterar ibland speaking = false medan talet ändå pågår,
+     och ibland tystnar en utterance utan att vare sig onend eller onerror
+     kommer. En naiv "starta om samma bit" gör då att samma mening läses om
+     och om igen. Därför håller vi reda på vilken bit vi redan försökt med:
+     fastnar samma index två gånger i rad hoppar vi vidare i stället för att
+     fastna i en evig upprepning.
+     ===================================================================== */
+  var tystIndex = -1;
+  var tystForsok = 0;
+
+  window.setInterval(function () {
+    if (lage !== "spelar") { tystIndex = -1; tystForsok = 0; return; }
+    if (synth.speaking || synth.pending) { tystIndex = -1; tystForsok = 0; return; }
+    if (Date.now() - senasteHandelse < 2500) { return; }
+
+    if (index === tystIndex) { tystForsok++; }
+    else { tystIndex = index; tystForsok = 1; }
+
+    if (tystForsok >= 2) {
+      tystIndex = -1;
+      tystForsok = 0;
+      index++;
+      if (index >= ko.length) { klart(); return; }
+      if (stoppaVid !== null && ko[index].b > stoppaVid) { klart(); return; }
+    }
+
+    spelaFran(index, stoppaVid);
+  }, 3000);
+
+  /* Chrome-bugg: talsyntesen kan tystna mitt i en lång stund om webbläsaren
+     själv pausar. Att be om resume när vi redan spelar är ofarligt och håller
+     motorn vaken. */
+  window.setInterval(function () {
+    if (lage !== "spelar") { return; }
+    if (!synth.speaking) { return; }
+    try { synth.resume(); } catch (e) { /* ignoreras */ }
+  }, 10000);
+
+  /* =====================================================================
+     7. Gränssnitt
+     ===================================================================== */
+  function rita() {
+    var spelar = (lage === "spelar");
+    var pausad = (lage === "pausad");
+
+    var PAUS  = '<span class="tts-sym" aria-hidden="true">&#10073;&#10073;</span>';
+    var SPELA = '<span class="tts-sym" aria-hidden="true">&#9654;&#65038;</span>';
+    var HOGT  = '<svg class="tts-ik" viewBox="-1.7 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9.5h3.6L11.8 5v14L6.6 14.5H3a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1z"/><path fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" d="M14.7 9.2a4 4 0 0 1 0 5.6M17.5 6.4a8 8 0 0 1 0 11.2"/></svg>';
+
+    el.oppna.innerHTML = spelar ? PAUS : pausad ? SPELA : HOGT;
+
+    var namn = spelar ? "Pausa uppläsningen"
+             : pausad ? "Fortsätt uppläsningen"
+             : "Lyssna på hela sidan";
+    el.oppna.setAttribute("aria-label", namn);
+    el.oppna.title = namn +
+      " · Alt+P spela eller pausa · Alt+S stoppa · Alt+vänster/höger stycke · " +
+      "Alt+plus/minus hastighet · Alt+O inställningar";
+
+    uppdateraAvsnittsknappar();
+  }
+
+  function oppnaRad() {
+    if (!ko.length) { byggKo(); }
+  }
+
+  el.oppna.addEventListener("click", function () {
+    oppnaRad();
+    if (lage === "spelar") { pausa(); } else { spela(); }
+  });
+
+  var RATES = [0.8, 0.9, 1, 1.1, 1.2, 1.25];
+
+  function narmasteRate() {
+    var bast = 0, diff = 99;
+    for (var i = 0; i < RATES.length; i++) {
+      var d = Math.abs(RATES[i] - inst.rate);
+      if (d < diff) { diff = d; bast = i; }
+    }
+    return bast;
+  }
+
+  function stegaRate(riktning) {
+    var i = narmasteRate();
+    if (riktning > 0 && RATES[i] <= inst.rate) { i++; }
+    else if (riktning < 0 && RATES[i] >= inst.rate) { i--; }
+    if (i < 0) { i = 0; }
+    if (i > RATES.length - 1) { i = RATES.length - 1; }
+    sattRate(RATES[i]);
+    meddela("Hastighet " + fmtTal(RATES[i], " gånger"));
+  }
+
+  function sattRate(v) {
+    inst.rate = v;
+    el.rate.value = v;
+    el.rateV.textContent = fmtTal(v, "×");
+    sparaInst();
+    rita();
+    if (lage === "spelar") { spelaFran(index, stoppaVid); }
+  }
+
+  el.rate.addEventListener("input", function () { sattRate(parseFloat(this.value)); });
+
+  el.ton.addEventListener("change", function () {
+    inst.ton = parseFloat(this.value);
+    el.tonV.textContent = fmtTal(inst.ton);
+    sparaInst();
+    if (lage === "spelar") { spelaFran(index, stoppaVid); }
+  });
+  el.ton.addEventListener("input", function () { el.tonV.textContent = fmtTal(parseFloat(this.value)); });
+
+  el.volym.addEventListener("change", function () {
+    inst.volym = parseFloat(this.value);
+    sparaInst();
+    if (lage === "spelar") { spelaFran(index, stoppaVid); }
+  });
+  el.volym.addEventListener("input", function () {
+    el.volymV.textContent = Math.round(parseFloat(this.value) * 100) + " %";
+  });
+
+  el.rost.addEventListener("change", function () {
+    inst.rost = this.value;
+    autoRost  = !inst.rost;
+    valdRost  = autoRost ? (svRoster[0] || null) : (hittaRost(inst.rost) || valdRost);
+    sparaInst();
+    visaTips();
+    if (lage === "spelar") { spelaFran(index, stoppaVid); }
+  });
+
+  el.folj.addEventListener("change", function () { inst.folj = this.checked; sparaInst(); });
+
+  el.markera.addEventListener("change", function () {
+    inst.markera = this.checked;
+    if (!inst.markera && harHighlight) { hlOrd.clear(); }
+    sparaInst();
+  });
+
+  el.klick.addEventListener("change", function () {
+    inst.klick = this.checked;
+    document.body.classList.toggle("tts-peka", inst.klick);
+    if (!inst.klick) { satPekat(null); }
+    sparaInst();
+  });
+
+  /* ---------- Inställningar i en dialogruta (Alt+O) ---------- */
+  var fokusFore = null;
+
+  function oppnaInst() {
+    if (!el.modal.hidden) { return; }
+    fokusFore = document.activeElement;
+    el.modal.hidden = false;
+    el.kort.focus();
+    meddela("Inställningar för uppläsning öppnade");
+  }
+
+  function stangInst() {
+    if (el.modal.hidden) { return; }
+    el.modal.hidden = true;
+    if (fokusFore && fokusFore.focus) { fokusFore.focus(); }
+    fokusFore = null;
+  }
+
+  el.stang.addEventListener("click", stangInst);
+
+  el.modal.addEventListener("click", function (e) {
+    if (e.target === el.modal) { stangInst(); }
+  });
+
+  el.modal.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab") { return; }
+    var kan = el.kort.querySelectorAll("button, select, input, [href], [tabindex]:not([tabindex='-1'])");
+    if (!kan.length) { return; }
+    var forst = kan[0], sist = kan[kan.length - 1];
+    if (e.shiftKey && document.activeElement === forst) { sist.focus(); e.preventDefault(); }
+    else if (!e.shiftKey && document.activeElement === sist) { forst.focus(); e.preventDefault(); }
+  });
+
+  /* ---------- Kortkommandon ---------- */
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !el.modal.hidden) { stangInst(); return; }
+    if (e.ctrlKey || e.metaKey || !e.altKey) { return; }
+    var k = (e.key || "").toLowerCase();
+    var t = e.target;
+    if (k !== "o" && t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.nodeName)) { return; }
+    if (k === "o") { if (el.modal.hidden) { oppnaInst(); } else { stangInst(); } e.preventDefault(); }
+    else if (k === "p") { oppnaRad(); if (lage === "spelar") { pausa(); } else { spela(); } e.preventDefault(); }
+    else if (k === "s") { stoppa(); e.preventDefault(); }
+    else if (e.key === "ArrowRight") { oppnaRad(); hoppa(1); e.preventDefault(); }
+    else if (e.key === "ArrowLeft")  { oppnaRad(); hoppa(-1); e.preventDefault(); }
+    else if (k === "+" || k === "=" || k === "add")      { stegaRate(1); e.preventDefault(); }
+    else if (k === "-" || k === "_" || k === "subtract") { stegaRate(-1); e.preventDefault(); }
+  });
+
+  /* ---------- Muspekaren: lys upp det stycke ett klick skulle läsa ---------- */
+  var pekatEl = null;
+
+  function satPekat(elm) {
+    if (pekatEl === elm) { return; }
+    if (pekatEl) { pekatEl.classList.remove("tts-peka-pa"); }
+    pekatEl = elm || null;
+    if (pekatEl) { pekatEl.classList.add("tts-peka-pa"); }
+  }
+
+  function styckeUnder(mal) {
+    if (!inst.klick || !mal || !mal.closest) { return null; }
+    if (root.contains(mal)) { return null; }
+    if (mal.closest("a, button, input, select, textarea, iframe")) { return null; }
+    return mal.closest(".tts-lasbar");
+  }
+
+  document.addEventListener("mouseover", function (e) { satPekat(styckeUnder(e.target)); });
+  document.addEventListener("mouseout", function (e) { if (!e.relatedTarget) { satPekat(null); } });
+
+  /* ---------- Klicka på texten för att läsa därifrån ---------- */
+  document.addEventListener("click", function (e) {
+    if (!inst.klick) { return; }
+    if (root.contains(e.target)) { return; }
+    if (e.target.closest && e.target.closest("a, button, input, select, textarea, iframe")) { return; }
+    if (!ko.length) { byggKo(); }
+    for (var b = 0; b < block.length; b++) {
+      var foralderEl = block[b].foralder;
+      if (foralderEl && foralderEl.classList && !foralderEl.classList.contains("tts-lasbar")) { continue; }
+      for (var n = 0; n < block[b].noder.length; n++) {
+        var nod = block[b].noder[n];
+        var elm = (nod.nodeType === 1) ? nod : nod.parentNode;
+        if (elm && (elm === e.target || elm.contains(e.target))) {
+          oppnaRad();
+          aktivtBlock = -1;
+          spelaFran(forstaBiten(b), null);
+          return;
+        }
+      }
+    }
+  });
+
+  /* =====================================================================
+     8. Lyssna-knappar i innehållet
+     ===================================================================== */
+  var avsnittsKnappar = [];
+
+  function blockIntervall(sektion) {
+    var forsta = -1, sista = -1;
+    for (var b = 0; b < block.length; b++) {
+      var nod = block[b].noder[0];
+      var elm = (nod.nodeType === 1) ? nod : nod.parentNode;
+      if (elm && sektion.contains(elm)) {
+        if (forsta === -1) { forsta = b; }
+        sista = b;
+      }
+    }
+    return [forsta, sista];
+  }
+
+  function uppdateraAvsnittsknappar() {
+    for (var i = 0; i < avsnittsKnappar.length; i++) {
+      var k = avsnittsKnappar[i];
+      var aktiv = (lage === "spelar" && k.fran >= 0 && aktivtBlock >= k.fran && aktivtBlock <= k.till);
+      k.kn.setAttribute("aria-pressed", aktiv ? "true" : "false");
+      k.txt.textContent = aktiv ? "Pausa uppläsningen" : "Lyssna på avsnittet";
+    }
+  }
+
+  function skapaAvsnittsknapp(sektion, pagron) {
+    var kn = document.createElement("button");
+    kn.type = "button";
+    kn.className = "tts-avsnitt tts-ui" + (pagron ? " tts-pa-gron" : "");
+    kn.setAttribute("aria-pressed", "false");
+
+    var ikon = document.createElement("span");
+    ikon.setAttribute("aria-hidden", "true");
+    ikon.innerHTML = "&#128266;";
+    var txt = document.createElement("span");
+    txt.textContent = "Lyssna på avsnittet";
+    kn.appendChild(ikon);
+    kn.appendChild(txt);
+
+    kn.addEventListener("click", function () {
+      var omr = blockIntervall(sektion);
+      if (omr[0] === -1) { return; }
+      oppnaRad();
+      if (lage === "spelar" && aktivtBlock >= omr[0] && aktivtBlock <= omr[1]) { pausa(); return; }
+      aktivtBlock = -1;
+      rensaMarkering();
+      spelaFran(forstaBiten(omr[0]), omr[1]);
+      meddela("Läser upp avsnittet " + (AVSNITT[sektion.id] || ""));
+    });
+
+    return { kn: kn, txt: txt };
+  }
+
+  function placeraKnappar() {
+    var knapprad = document.querySelector("#hem .knapprad");
+    if (knapprad) {
+      var heroKn = document.createElement("button");
+      heroKn.type = "button";
+      heroKn.className = "tts-hero tts-ui";
+      heroKn.innerHTML = '<span class="tts-hero-ik" aria-hidden="true">&#128266;</span>Lyssna på sidan';
+      heroKn.addEventListener("click", function () {
+        oppnaRad();
+        aktivtBlock = -1;
+        rensaMarkering();
+        spelaFran(0, null);
+      });
+      knapprad.appendChild(heroKn);
+    }
+
+    ["om", "aktiviteter", "medlem", "kontakt"].forEach(function (id) {
+      var sektion = document.getElementById(id);
+      if (!sektion) { return; }
+      var streck = sektion.querySelector(".streck");
+      if (!streck) { return; }
+
+      var skapad  = skapaAvsnittsknapp(sektion, id === "kontakt");
+      var hallare = document.createElement("div");
+      hallare.className = "tts-ui";
+      hallare.appendChild(skapad.kn);
+      streck.parentNode.insertBefore(hallare, streck.nextSibling);
+
+      avsnittsKnappar.push({ kn: skapad.kn, txt: skapad.txt, sektion: sektion, fran: -1, till: -1 });
+    });
+  }
+
+  /* =====================================================================
+     9. Start
+     ===================================================================== */
+  function harLjusText(elm) {
+    var d = String(window.getComputedStyle(elm).color || "").match(/[\d.]+/g);
+    if (!d || d.length < 3) { return false; }
+    return (0.2126 * +d[0] + 0.7152 * +d[1] + 0.0722 * +d[2]) / 255 > 0.6;
+  }
+
+  function baraKnappar(elm) {
+    var allt = (elm.textContent || "").replace(/\s+/g, "");
+    if (!allt) { return true; }
+    var inne = "", lankarKnappar = elm.querySelectorAll("a, button");
+    for (var i = 0; i < lankarKnappar.length; i++) {
+      inne += (lankarKnappar[i].textContent || "").replace(/\s+/g, "");
+    }
+    return inne.length >= allt.length;
+  }
+
+  function markeraLasbara() {
+    for (var b = 0; b < block.length; b++) {
+      var f = block[b].foralder;
+      if (f && f.nodeType === 1) {
+        if (harLjusText(f)) { f.classList.add("tts-ljus-text"); }
+        if (!baraKnappar(f)) { f.classList.add("tts-lasbar"); }
+      }
+    }
+  }
+
+  function init() {
+    placeraKnappar();
+    byggKo();
+    markeraLasbara();
+
+    for (var i = 0; i < avsnittsKnappar.length; i++) {
+      var omr = blockIntervall(avsnittsKnappar[i].sektion);
+      avsnittsKnappar[i].fran = omr[0];
+      avsnittsKnappar[i].till = omr[1];
+    }
+
+    el.rate.value      = inst.rate;
+    el.ton.value       = inst.ton;
+    el.volym.value     = inst.volym;
+    el.folj.checked    = !!inst.folj;
+    el.markera.checked = !!inst.markera;
+    el.klick.checked   = !!inst.klick;
+    el.rateV.textContent  = fmtTal(inst.rate, "×");
+    el.tonV.textContent   = fmtTal(inst.ton);
+    el.volymV.textContent = Math.round(inst.volym * 100) + " %";
+    document.body.classList.toggle("tts-peka", !!inst.klick);
+
+    visaRostvarning();
+
+    if (!harTal) { el.oppna.style.display = "none"; }
+
+    rita();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+
+  function tystna() {
+    try { synth.cancel(); } catch (e) { /* ignoreras */ }
+  }
+  window.addEventListener("pagehide", tystna);
+  window.addEventListener("beforeunload", tystna);
+
+})();
+</script>
+<!-- ================= UPPLÄSNING (TEXT-TILL-TAL) KLAR ================= -->
+</body>
+</html>
